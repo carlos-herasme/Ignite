@@ -1,23 +1,23 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Ignite;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
-using System.Text;
-using Ignite;
 using System.IO;
+using System.Text;
 
-namespace IgniteTest
+namespace IgniteTest.ValidatorTest
 {
     [TestClass]
-    public class ValidatorTest
+    public class ValidateFilePath
     {
         internal Validator Validator { get; } = new Validator();
         readonly string executionDirectory, currentDirectory;
 
-        public ValidatorTest()
+        public ValidateFilePath()
         {
             executionDirectory = Environment.CurrentDirectory;
             string binDirectory = Directory.GetParent(executionDirectory).Parent.FullName;
-            currentDirectory = Directory.GetParent(binDirectory).FullName;
+            currentDirectory = Directory.GetParent(binDirectory).Parent.FullName;
         }
 
         [TestMethod]
