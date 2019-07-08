@@ -21,7 +21,7 @@ namespace Ignite
                 wellFileInfo = false;
                 fileError =  FileErrorInfo.Path;
             }
-            else if (!File.Exists(fileName))
+            else if (!File.Exists($@"{filePath}\{fileName}"))
             {
                 wellFileInfo = false;
                 fileError = FileErrorInfo.File;
